@@ -39,6 +39,7 @@ int main(){
         {
         case 1: //jika pengguna ingin menambahkan data pemasukan (1)
             //mendapatkan input keterangan transasksi dari pengguna
+            {
             cout<<"Masukkan keterangan transaksi: ";
             cin.ignore();
             getline(cin, keterangan[baris]); 
@@ -51,9 +52,11 @@ int main(){
             total[baris] = total[baris-1] + pemasukan[baris]; //menghitung jumlah total uang tersisa yang dimiliki pengguna
             baris++; //penambahan baris
             continue;
+            }
 
         case 2: //jika pengguna ingin menambahkan data pengeluaran (2)
             //mendapatkan input keterangan transaksi dari pengguna
+            {
             cout<<"Masukkan keterangan transaksi: ";
             cin.ignore();
             getline(cin, keterangan[baris]);
@@ -66,27 +69,34 @@ int main(){
             total[baris] = total[baris-1] - pengeluaran[baris]; //menghitung jumlah total uang tersisa yang dimiliki pengguna
             baris++; //penambahan baris
             continue;
+            }
 
         case 3: //jika pengguna ingin menampilkan tabel keuangan (3)
-            cout<<"TABEL KEUANGAN\n"; //judul
+            {
+            cout<<"\nTABEL KEUANGAN\n"; //judul
             //memberi output berupa header tabel
-            cout<< "========================================================================================================" << endl;
+            cout<< "--------------------------------------------------------------------------------------------------------" << endl;
             cout<< left << setw(20) << "Waktu" << setw(25) << "Keterangan" << setw(25) << "Pemasukan" << setw(25) << "Pengeluaran" << setw(25) << "Total" << endl;
-            cout<< "========================================================================================================" << endl;
+            cout<< "---------------------------------------------------------------------------------------------------------" << endl;
 
             //memberi output berupa isi tabel pada setiap baris ke i
             for(int i = 0; i<baris; i++){
                 cout << left << setw(20) << waktu[i] << setw(25) << keterangan[i] << setw(25) << "Rp" << pemasukan[i] << setw(25) << "Rp" << pengeluaran[i] << setw(25) << "Rp" << total[i] << endl;
-                cout<< "-------------------------------------------------------------------------------------------------------" << endl;
+                cout<< "......................................................................................................." << endl;
 
             break;
+            }
 
         case 4: //jika pengguna ingin keluar dari sistem
+            {
             break;
+            }
             
         default:
-            cout << "Pilihan Anda Tidak Valid, Silahkan Coba Lagi\n";
+            {
+                cout << "Pilihan Anda Tidak Valid, Silahkan Coba Lagi\n";
             continue;
+            }
         }
     }
 
